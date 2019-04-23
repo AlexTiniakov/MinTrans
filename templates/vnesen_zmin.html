@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container head">
+            <div class="row">
+                <div class="col-2">
+                    <!-- GOV.UA LOGO-->
+                    <div class="govua-logo">
+                        <a class="main-logo main-logo-dark" href="http://mtu.gov.ua/">
+                            <div class="icon-flag">
+                                <div class="yellow"></div>
+                                <div class="blue"></div>
+                            </div>
+                            <div class="wrap-text">
+                                <span class="one">gov.ua</span>
+                                <span class="light">Державні сайти України</span>
+                            </div>
+                        </a>
+                        <div class="modal-background"></div>
+                    </div>
+                </div>
+                <div class="col-8 header-middle">
+                    <img class="image" src="{{ url_for('static', filename='img/logo2.png') }}" alt="Coat of Arms">
+                    <div class="main-title">Електронне подання документів</div>
+                    <div class="grey">Веб-портал Міністерства інфраструктури України</div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="form-title">
+                        Заява на внесення змін до функціонуючого регулярного міжнародного автомобільного маршруту</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="carrrier-name">Назва організації-перевізника *</label>
+                            <input type="text" id="carrrier-name" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Поштова адреса *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Фінансові реквізити *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>ЄДРПОУ *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Прізвище *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ім'я *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>По батькові *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Посада *</label>
+                            <input type="" id="" class="form-control">
+                        </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Адреса електронної пошти *</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                      </div>
+                      <!-- <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div> -->
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Зобов'язуюся виконувати законодавство про автомобільний транспорт та Правила надання послуг пасажирського автомобільного транспорту *</label>
+                      </div>
+
+                      <div class="form-group">
+                            <label>Назва маршруту *</label>
+                            <input type="" id="" class="form-control">
+                    </div>  
+                    
+                    <div class="form-group">
+                            <label>Частина, в яку треба внести зміни *</label>
+                            <form action="#">
+                                <p>
+                                  <label>
+                                    <input name="group1" type="radio" checked />
+                                    <span>схеми маршруту</span>
+                                  </label>
+                                </p>
+                                <p>
+                                  <label>
+                                    <input name="group1" type="radio" />
+                                    <span>розкладу руху</span>
+                                  </label>
+                                </p>
+                                <p>
+                                  <label>
+                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <span>тарифів</span>
+                                  </label>
+                                </p>
+                                <p>
+                                  <label>
+                                    <input name="group1" type="radio" />
+                                    <span>перевізника</span>
+                                  </label>
+                                </p>
+                                <p>
+                                  <label>
+                                    <input name="group1" type="radio" />
+                                    <span>Інше:</span>
+                                    <input type="" id="" class="form-control">
+                                  </label>
+                                </p>
+                              </form>
+                    </div> 
+
+                    <div class="form-group files">
+                            <label>Проект схеми міжнародного маршруту *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+                    <div class="form-group files">
+                            <label>Проект розкладу руху *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+                    <div class="form-group files">
+                            <label>Проект графіка роботи та відпочинку водіїв *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                    <div class="form-group files">
+                            <label>Проект тарифів на перевезення *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                    <div class="form-group files">
+                            <label>Список автобусів, що будуть використовуватись, у т.ч. резервних *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                    <div class="form-group files">
+                            <label>Підтвердження відповідності автобуса умовам перевезень *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                    <div class="form-group files">
+                            <label>Копії свідотств про проходження водіями спеціальних курсів міжнародних перевезень *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                
+
+                    <div class="form-group files">
+                            <label>Копії ліцензії на право надання послуг з міжнародних перевезень пасажирів автомобільним транспортом та лізензійних карток на кожний автобус за списком *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                    <div class="form-group files">
+                            <label>Рекомендація громадської організації транспортного профілю (подається за бажанням перевізника) </label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+
+                    <div class="form-group files">
+                            <label>Копії угод про спільну діяльність з іноземним перевізником та автостанціями на наступний термін *</label>
+                            <input type="file" id="" class="form-control-file">
+                    </div>
+                    <!-- Checkbox start-->
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Підтвердіть наявність досвіду у перевізника щодо здійснення внутрішніх перевезень пасажирів протягом двох і більше років або міжнародних нерегулярних чи маятникових перевезень пасажирів - одного і більше років *</label>
+                  </div>
+
+            <!-- Checkbox end-->
+
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+<footer>
+        <div class="copyright">© 2019 Ministerstvo</div>
+    </footer>
+</body>

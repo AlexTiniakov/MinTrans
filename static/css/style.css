@@ -1,0 +1,221 @@
+/* START RESET CSS */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* END RESET CSS */
+
+
+body{
+    background-color: #FBFAF9;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#app {
+    /*font-family: Proba Pro Regular;*/
+    /*font-family: 'Catamaran', sans-serif;*/
+    /*font-family: "Comic Sans MS";*/
+    height: 100%;
+}
+
+header {
+    padding: 34px 41px 58px;
+    height: 220px;
+    width: 100%;
+    background: #1d4671;
+    min-width: 950px;
+}
+
+.header-middle {
+    color: #fff;
+    text-align: center;
+    /*margin: ;*/
+}
+
+footer {
+    height: 15vh;
+    width: 100%;
+    min-height: 20px;
+    background-color: #f2f1ef;
+/*    position: absolute;
+    bottom: 0;*/
+}
+
+.govua-logo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.blue {
+    background-logo: block;
+    background-color: #2669e3;
+    width: 10px;
+    height: 20px;
+}
+
+.yellow {
+    display: block;
+    background-color: #ffe358;
+    width: 10px;
+    height: 20px;
+}
+
+.icon-flag {
+    float: left;
+}
+
+.wrap-text {
+    margin: 7px 20px;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.one {
+    color: white;
+    font-weight: 700;
+    line-height: .5;
+    font-size: 112%;
+}
+
+.light {
+    font-weight: 100;
+    color: #aab3c6;
+    margin-top: 9px;
+    font-size: .6em;
+    letter-spacing: .8px;
+    white-space: nowrap;
+}
+
+.grey {
+    font-weight: 100;
+    color: #aab3c6;
+    font-size: 1em;
+    line-height: 29px;
+    opacity: 0.8;
+}
+
+.main-title {
+    font-size: 1.7em;
+    line-height: 41px;
+    letter-spacing: 4px;
+    margin-top: 10px;
+}
+
+.image {
+    width: 31px;
+}
+
+.chose-category {
+    margin: 52px auto;
+    border: 1px solid darkgrey;
+    height: 403px;
+    width: 400px;
+    text-align: center;
+}
+
+.table-top {
+    border: 1px solid darkgrey;
+    background: #1d4671;
+    height: 79px;
+    line-height: 71px;
+    color: rgba(256, 256, 256, 0.9);
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.table-content {
+    margin: 25px 25px 25px 49px ;
+    line-height: 28px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.table-content>ul {
+    list-style-type: disc;
+}
+
+.form-title {
+    margin: 40px 10px;
+    text-align: center;
+    font-size: 15pt;
+}
+
+form {
+    margin: 30px 10px 10px;
+}
+
+.form-check {
+    margin: 40px 0px;
+}
+
+.files>label {
+    padding-bottom: 10px;
+}
+
+.files {
+    margin-top: 36px;
+}
+
+.btn {
+    margin: 10px;
+}
