@@ -10,22 +10,11 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript">
             $(window).ready(function(){
-            //     var filesArray=[];
-            //     $('input[type="file"]').each(function(){
-            //         filesArray.push($(this).attr('id'))
-            //     })
-            //     console.log(filesArray);
-            
             $('#upload').submit(function(e){
                 e.preventDefault();
                 var form_data = new FormData;
-                //проверить возможность загрузки нескольких файлов
-                /*$('input[type="text"]').each(function(){
-                    form_data.append($(this).attr('id'),$('#'+$(this).attr('id')).val());
-                 })*/
                 var carrrier_name = $('#carrrier_name').val();
                 var post_addr = $('#post_addr').val();
-                var finans_recviz = $('#finans_recviz').val();
                 var finans_recviz = $('#finans_recviz').val();
                 var edrpoy = $('#edrpoy').val();
                 var id_pereviz = $('#id_pereviz').val();
@@ -39,20 +28,14 @@
                 var posada = $('#posada').val();
                 var emailHelp = $('#exampleInputEmail1').val();
                 
-                
                 var anketa_prodovj_stroky = document.getElementById('anketa_prodovj_stroky').files[0];
                 var vidom_avtobusy = document.getElementById('vidom_avtobusy').files[0];
                 var vidom_dodatk_ymovi = document.getElementById('vidom_dodatk_ymovi').files[0];
                 var vidom_invest = document.getElementById('vidom_invest').files[0];
                 var exampleCheck1 = $('#exampleCheck1:checked').val()
-                //var image_name = vidom_invest.name;
-                //var image_extension = image_name.split('.').pop().toLowerCase();
-        
-                // if(jQuery.inArray(image_extension,['gif','jpg','png','jpeg','']) == -1){
-                // alert("Invalid image file");
-                // }
                 
-                
+                form_data.append("type_of","prod_obl");
+
                 form_data.append("carrrier_name",carrrier_name);
                 form_data.append("post_addr",post_addr);
                 form_data.append("finans_recviz",finans_recviz);
@@ -73,9 +56,8 @@
                 form_data.append("vidom_dodatk_ymovi",vidom_dodatk_ymovi);
                 form_data.append("vidom_invest",vidom_invest);
                 form_data.append("exampleCheck1",exampleCheck1);
-                console.log('sadfbajdshfbkdajshbfjk')
                 $.ajax({
-                url:'http://127.0.0.1:5000/prod_obl_mail',
+                url:'http://127.0.0.1:5000/send_mail',
                 method:'POST',
                 data:form_data,
                 contentType:false,
@@ -224,7 +206,7 @@
 
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Подаючи цю заяву, засвідчую, що на день її подачі автомобільного перевізника не визнано банкротом, щодо нього не порушено справу про банкротство, не проводиться процедура санації, підприємство не перебуває в стані ліквідації, а також даю згоду на укладення договору аб отримання дозволу на виконання перевезень">
-                        <label class="form-check-label" for="exampleCheck1">Подаючи цю заяву, засвідчую, що на день її подачі автомобільного перевізника не визнано банкротом, щодо нього не порушено справу про банкротство, не проводиться процедура санації, підприємство не перебуває в стані ліквідації, а також даю згоду на укладення договору аб отримання дозволу на виконання перевезень *</label>
+                        <label class="form-check-label" for="exampleCheck1">Подаючи цю заяву, засвідчую, що на день її подачі автомобільного перевізника не визнано банкротом, щодо нього не порушено справу про банкротство, не проводиться процедура санації, підприємство не перебуває в стані ліквідації, а також даю згоду на укладення договору та отримання дозволу на виконання перевезень *</label>
                       </div>
 
                       <button type="submit" class="btn btn-primary">Submit</button>

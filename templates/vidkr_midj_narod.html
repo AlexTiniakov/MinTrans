@@ -7,6 +7,82 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(window).ready(function(){
+            $('#upload').submit(function(e){
+                e.preventDefault();
+                var form_data = new FormData;
+                var carrrier_name = $('#carrrier_name').val();
+                var post_addr = $('#post_addr').val();
+                var finans_recviz = $('#finans_recviz').val();
+                var edrpoy = $('#edrpoy').val();
+                var last_nane = $('#last_nane').val();
+                var first_name = $('#first_name').val();
+                var second_name = $('#second_name').val();
+                var posada = $('#posada').val();
+                var emailHelp = $('#exampleInputEmail1').val();
+                var nazva_marshruty = $('#nazva_marshruty').val();
+                
+                var shema_marshr = document.getElementById('shema_marshr').files[0];
+                var rozklad_ryhy = document.getElementById('rozklad_ryhy').files[0];
+                var grafik_vidpochinky = document.getElementById('grafik_vidpochinky').files[0];
+                var taryfy = document.getElementById('taryfy').files[0];
+                var spusok_avtob = document.getElementById('spusok_avtob').files[0];
+                var vidpovidnist_avtob = document.getElementById('vidpovidnist_avtob').files[0];
+                var svidotstva = document.getElementById('svidotstva').files[0];
+                var licenzii = document.getElementById('licenzii').files[0];
+                var rekomendacii = document.getElementById('rekomendacii').files[0];
+                var ygodu = document.getElementById('ygodu').files[0];
+
+                var exampleCheck1 = $('#exampleCheck1:checked').val()
+                var exampleCheck2 = $('#exampleCheck2:checked').val()
+                
+                form_data.append("type_of","vidkr_midj_narod");
+
+                form_data.append("carrrier_name",carrrier_name);
+                form_data.append("post_addr",post_addr);
+                form_data.append("finans_recviz",finans_recviz);
+                form_data.append("edrpoy",edrpoy);
+                form_data.append("last_nane",last_nane);
+                form_data.append("first_name",first_name);
+                form_data.append("second_name",second_name);
+                form_data.append("posada",posada);
+                form_data.append("emailHelp",emailHelp);
+                form_data.append("nazva_marshruty",nazva_marshruty);
+                
+                form_data.append("shema_marshr",shema_marshr);
+                form_data.append("rozklad_ryhy",rozklad_ryhy);
+                form_data.append("grafik_vidpochinky",grafik_vidpochinky);
+                form_data.append("taryfy",taryfy);
+                form_data.append("spusok_avtob",spusok_avtob);
+                form_data.append("vidpovidnist_avtob",vidpovidnist_avtob);
+                form_data.append("svidotstva",svidotstva);
+                form_data.append("licenzii",licenzii);
+                form_data.append("rekomendacii",rekomendacii);
+                form_data.append("ygodu",ygodu);
+
+                form_data.append("exampleCheck1",exampleCheck1);
+                form_data.append("exampleCheck2",exampleCheck1);
+                $.ajax({
+                url:'http://127.0.0.1:5000/send_mail',
+                method:'POST',
+                data:form_data,
+                contentType:false,
+                cache:false,
+                processData:false,
+                beforeSend:function(e){
+                    $('#msg').html('Loading......');
+                },
+                success:function(data){
+                    console.log(data);
+                    $('#msg').html(data);
+                }
+                });
+                return false;
+            });
+        });
+        </script>
     <header>
         <div class="container head">
             <div class="row">
@@ -43,42 +119,42 @@
                     <form>
                         <div class="form-group">
                             <label for="carrrier-name">Назва організації-перевізника *</label>
-                            <input type="text" id="carrrier-name" class="form-control">
+                            <input type="text" id="carrrier_name" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Поштова адреса *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="post_addr" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Фінансові реквізити *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="finans_recviz" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>ЄДРПОУ *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="edrpoy" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Прізвище *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="last_nane" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Ім'я *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="first_name" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>По батькові *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="second_name" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Посада *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="posada" class="form-control">
                         </div>
 
                       <div class="form-group">
@@ -95,57 +171,57 @@
 
                       <div class="form-group">
                             <label>Назва маршруту *</label>
-                            <input type="" id="" class="form-control">
+                            <input type="text" id="nazva_marshruty" class="form-control">
                         </div>
 
                     <div class="form-group files">
                             <label>Проект схеми міжнародного маршруту *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="shema_marshr" class="form-control-file">
                     </div>
                     <div class="form-group files">
                             <label>Проект розкладу руху *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="rozklad_ryhy" class="form-control-file">
                     </div>
                     <div class="form-group files">
                             <label>Проект графіка роботи та відпочинку водіїв *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="grafik_vidpochinky" class="form-control-file">
                     </div>
 
                     <div class="form-group files">
                             <label>Проект тарифів на перевезення *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="taryfy" class="form-control-file">
                     </div>
 
                     <div class="form-group files">
                             <label>Список автобусів, що будуть використовуватись, у т.ч. резервних *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="spusok_avtob" class="form-control-file">
                     </div>
 
                     <div class="form-group files">
                             <label>Підтвердження відповідності автобуса умовам перевезень *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="vidpovidnist_avtob" class="form-control-file">
                     </div>
 
                     <div class="form-group files">
                             <label>Копії свідотств про проходження водіями спеціальних курсів міжнародних перевезень *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="svidotstva" class="form-control-file">
                     </div>
 
                 
 
                     <div class="form-group files">
                             <label>Копії ліцензії на право надання послуг з міжнародних перевезень пасажирів автомобільним транспортом та лізензійних карток на кожний автобус за списком *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="licenzii" class="form-control-file">
                     </div>
 
                     <div class="form-group files">
                             <label>Рекомендація громадської організації транспортного профілю (подається за бажанням перевізника) </label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="rekomendacii" class="form-control-file">
                     </div>
 
                     <div class="form-group files">
                             <label>Копії угод про спільну діяльність з іноземним перевізником та автостанціями на наступний термін *</label>
-                            <input type="file" id="" class="form-control-file">
+                            <input type="file" id="ygodu" class="form-control-file">
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -155,7 +231,7 @@
 
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Підтвердіть наявність досвіду у перевізника щодо здійснення внутрішніх перевезень пасажирів протягом двох і більше років або міжнародних нерегулярних чи маятникових перевезень пасажирів - одного і більше років *</label>
+                    <label class="form-check-label" for="exampleCheck2">Підтвердіть наявність досвіду у перевізника щодо здійснення внутрішніх перевезень пасажирів протягом двох і більше років або міжнародних нерегулярних чи маятникових перевезень пасажирів - одного і більше років *</label>
                   </div>
 
             <!-- Checkbox end-->
